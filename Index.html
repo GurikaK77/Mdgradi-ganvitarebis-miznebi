@@ -18,6 +18,7 @@
                 <li><a href="#problems">პრობლემა</a></li>
                 <li><a href="#calculator">კალკულატორი</a></li>
                 <li><a href="#solutions">გამოსავალი</a></li>
+                <li><a href="#comments">კომენტარი</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -119,6 +120,20 @@
                     </div>
                 </article>
             </div>
+        </div>
+    </section>
+
+    <section id="comments" class="section-padding">
+        <div class="container text-center">
+            <h2 class="section-title">დაგვიტოვეთ კომენტარი</h2>
+            <p style="margin-bottom: 20px;">გაგვიზიარეთ თქვენი აზრი საიტის შესახებ.</p>
+            
+            <form id="comment-form" action="https://formspree.io/f/mqeznldl" method="POST" class="comment-form reveal">
+                <textarea name="message" placeholder="დაწერეთ თქვენი კომენტარი აქ..." required></textarea>
+                
+                <button type="submit" class="btn-primary" style="margin-top: 20px;">გაგზავნა</button>
+                <p id="comment-status" style="margin-top: 15px; font-weight: bold;"></p>
+            </form>
         </div>
     </section>
 
