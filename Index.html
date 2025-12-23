@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFuture | კლიმატის ცვლილება</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=BPG+Banner+Caps&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo"><i class="fa-solid fa-leaf"></i> EcoFuture</h1>
+            <ul class="nav-links">
+                <li><a href="#home">მთავარი</a></li>
+                <li><a href="#problems">პრობლემა</a></li>
+                <li><a href="#calculator">კალკულატორი</a></li>
+                <li><a href="#solutions">გამოსავალი</a></li>
+                <li><a href="#contact" class="btn-highlight">შემოგვიერთდი</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>გადაარჩინე დედამიწა დღეს</h2>
+            <p>კლიმატის ცვლილება რეალურია. ჩვენი ქმედებები განსაზღვრავს მომავალს. დროა ავიღოთ პასუხისმგებლობა.</p>
+            <a href="#calculator" class="btn-primary">გამოთვალე შენი გავლენა <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </header>
+
+    <section id="problems" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">გლობალური გამოწვევები</h2>
+            <div class="grid-3">
+                <div class="card reveal">
+                    <i class="fa-solid fa-temperature-arrow-up icon"></i>
+                    <h3>ტემპერატურის ზრდა</h3>
+                    <p>გლობალური ტემპერატურა 1.1°C-ით გაიზარდა ინდუსტრიამდელ პერიოდთან შედარებით.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fa-solid fa-icicles icon"></i>
+                    <h3>მყინვარების დნობა</h3>
+                    <p>არქტიკული ყინული ყოველ ათწლეულში 13%-ით მცირდება, რაც საფრთხეს უქმნის ოკეანის დონეს.</p>
+                </div>
+                <div class="card reveal">
+                    <i class="fa-solid fa-smog icon"></i>
+                    <h3>CO2 ემისიები</h3>
+                    <p>ნახშირორჟანგის კონცენტრაცია ატმოსფეროში ბოლო 2 მილიონი წლის განმავლობაში უმაღლეს ნიშნულზეა.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section section-padding">
+        <div class="container">
+            <h2 class="section-title">ნახშირბადის კვალის კალკულატორი</h2>
+            <p class="subtitle">გაიგე, რამდენად აზიანებს შენი ცხოვრების წესი გარემოს.</p>
+            
+            <div class="calculator-wrapper reveal">
+                <form id="carbon-form">
+                    <div class="form-group">
+                        <label for="transport"><i class="fa-solid fa-car"></i> რამდენ კმ-ს გადიხარ მანქანით კვირაში?</label>
+                        <input type="number" id="transport" placeholder="მაგ: 100">
+                    </div>
+                    <div class="form-group">
+                        <label for="electricity"><i class="fa-solid fa-bolt"></i> ელ. ენერგიის გადასახადი (ლარი/თვეში)</label>
+                        <input type="number" id="electricity" placeholder="მაგ: 50">
+                    </div>
+                    <div class="form-group">
+                        <label for="meat"><i class="fa-solid fa-drumstick-bite"></i> კვირაში რამდენჯერ ჭამ ხორცს?</label>
+                        <input type="number" id="meat" placeholder="მაგ: 5">
+                    </div>
+                    <button type="submit" class="btn-calculate">გამოთვლა</button>
+                </form>
+
+                <div id="result" class="result-box hidden">
+                    <h3>შენი შედეგი:</h3>
+                    <p>შენი წლიური CO2 კვალი არის: <span id="score">0</span> ტონა.</p>
+                    <div id="feedback"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">როგორ შევამციროთ ზიანი?</h2>
+            <div class="grid-3">
+                <article class="blog-post reveal">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Recycling">
+                    <div class="content">
+                        <h3>გადაამუშავე ნარჩენები</h3>
+                        <p>ნარჩენების დახარისხება ამცირებს ნაგავსაყრელებზე მოხვედრილი ნაგვის რაოდენობას.</p>
+                        <a href="#">მეტის გაგება</a>
+                    </div>
+                </article>
+                <article class="blog-post reveal">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Solar Energy">
+                    <div class="content">
+                        <h3>გამოიყენე მწვანე ენერგია</h3>
+                        <p>მზის პანელები და ენერგოეფექტური ნათურები მნიშვნელოვნად ამცირებენ ემისიებს.</p>
+                        <a href="#">მეტის გაგება</a>
+                    </div>
+                </article>
+                <article class="blog-post reveal">
+                    <img src="https://images.unsplash.com/photo-1591779051696-1c3fa1469a79?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Planting">
+                    <div class="content">
+                        <h3>დარგე ხეები</h3>
+                        <p>ხეები შთანთქავენ CO2-ს და ასუფთავებენ ჰაერს. ერთი ხეც კი მნიშვნელოვანია.</p>
+                        <a href="#">მეტის გაგება</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="footer-cta section-padding">
+        <div class="container text-center">
+            <h2>გახდი ცვლილების ნაწილი</h2>
+            <p>გამოიწერე სიახლეები და მიიღე ყოველკვირეული რჩევები.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="შენი ელ-ფოსტა..." required>
+                <button type="submit" class="btn-secondary">გამოწერა</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>EcoFuture</h3>
+                <p>ჩვენი მიზანია შევქმნათ მდგრადი მომავალი მომდევნო თაობებისთვის.</p>
+            </div>
+            <div class="footer-col">
+                <h3>ბმულები</h3>
+                <ul>
+                    <li><a href="#">ჩვენს შესახებ</a></li>
+                    <li><a href="#">პროექტები</a></li>
+                    <li><a href="#">ბლოგი</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>კონტაქტი</h3>
+                <div class="socials">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 EcoFuture. ყველა უფლება დაცულია.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
