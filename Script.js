@@ -47,24 +47,17 @@ function reveal() {
 document.getElementById('carbon-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // მნიშვნელობების აღება
     const transport = parseFloat(document.getElementById('transport').value) || 0;
     const electricity = parseFloat(document.getElementById('electricity').value) || 0;
     const meat = parseFloat(document.getElementById('meat').value) || 0;
 
-    // მარტივი ფორმულა (სიმულაცია)
-    // მანქანა: 1კმ = 0.2 კგ CO2 (წელიწადში 52 კვირა)
-    // დენი: 1 ლარი ~ 5 კგ CO2 (უხეში დათვლა თვეში -> წელიწადში 12)
-    // ხორცი: 1 კვება ~ 2 კგ CO2 (წელიწადში 52 კვირა)
-    
     const transportEmission = transport * 52 * 0.2;
     const energyEmission = electricity * 12 * 5;
     const foodEmission = meat * 52 * 2;
 
     const totalKg = transportEmission + energyEmission + foodEmission;
-    const totalTons = (totalKg / 1000).toFixed(2); // გადაყვანა ტონებში
+    const totalTons = (totalKg / 1000).toFixed(2); 
 
-    // შედეგის გამოჩენა
     const resultBox = document.getElementById('result');
     const scoreSpan = document.getElementById('score');
     const feedback = document.getElementById('feedback');
@@ -72,7 +65,6 @@ document.getElementById('carbon-form').addEventListener('submit', function(e) {
     resultBox.classList.remove('hidden');
     scoreSpan.textContent = totalTons;
 
-    // შეფასება
     if (totalTons < 4) {
         resultBox.style.borderLeftColor = "#2ecc71";
         feedback.innerHTML = "<p style='color:green'>ყოჩაღ! შენი ნახშირბადის კვალი საშუალოზე დაბალია. განაგრძე ასე!</p>";
@@ -84,3 +76,40 @@ document.getElementById('carbon-form').addEventListener('submit', function(e) {
         feedback.innerHTML = "<p style='color:red'>მაღალი მაჩვენებელი! გირჩევთ შეამციროთ მანქანით სიარული და ენერგიის მოხმარება.</p>";
     }
 });
+
+// 4. Formspree კომენტარების გაგზავნა (გვერდის გადატვირთვის გარეშე)
+var form = document.getElementById("comment-form");
+    
+async function handleSubmit(event) {
+  event.preventDefault();
+  var status = document.getElementById("comment-status");
+  var data = new FormData(event.target);
+  
+  // მონაცემების გაგზავნა Formspree-ზე
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      status.innerHTML = "მადლობა! თქვენი კომენტარი წარმატებით გაიგზავნა.";
+      status.style.color = "#2ecc71"; // მწვანე ფერი
+      form.reset(); // ფორმის გასუფთავება
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+        } else {
+          status.innerHTML = "დაფიქსირდა შეცდომა კომენტარის გაგზავნისას.";
+          status.style.color = "red";
+        }
+      })
+    }
+  }).catch(error => {
+    status.innerHTML = "დაფიქსირდა შეცდომა კომენტარის გაგზავნისას.";
+    status.style.color = "red";
+  });
+}
+form.addEventListener("submit", handleSubmit);
