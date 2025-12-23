@@ -16,14 +16,14 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* მთავარი ტექსტისთვის */
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
 }
 
 h1, h2, h3 {
-    font-family: 'BPG Banner Caps', sans-serif; /* ქართული სათაურებისთვის */
+    font-family: 'BPG Banner Caps', sans-serif;
     color: var(--secondary-color);
 }
 
@@ -88,17 +88,6 @@ ul {
 
 .nav-links a:hover {
     color: var(--primary-color);
-}
-
-.btn-highlight {
-    background: var(--primary-color);
-    color: var(--white) !important;
-    padding: 10px 20px;
-    border-radius: 20px;
-}
-
-.btn-highlight:hover {
-    background: var(--primary-dark);
 }
 
 /* Burger Menu */
@@ -315,37 +304,7 @@ ul {
     margin-top: 10px;
 }
 
-/* --- Footer & Contact --- */
-.footer-cta {
-    background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    color: var(--white);
-}
-
-.newsletter-form {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.newsletter-form input {
-    padding: 15px;
-    width: 300px;
-    border-radius: 30px;
-    border: none;
-}
-
-.btn-secondary {
-    padding: 15px 30px;
-    border-radius: 30px;
-    border: none;
-    background: var(--primary-color);
-    color: var(--white);
-    cursor: pointer;
-    font-weight: bold;
-}
-
+/* --- Footer --- */
 footer {
     background: #1a252f;
     color: #bdc3c7;
@@ -442,14 +401,5 @@ footer {
 
     .hero-content h2 {
         font-size: 2.5rem;
-    }
-    
-    .newsletter-form {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .newsletter-form input {
-        width: 100%;
     }
 }
